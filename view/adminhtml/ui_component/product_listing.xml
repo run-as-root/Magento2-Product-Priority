@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="product_columns">
+        <column name="product_priority"
+                class="RunAsRoot\ProductPriorities\Ui\Component\Listing\Columns\ProductPriority"
+                sortOrder="150">
+            <settings>
+                <sortable>true</sortable>
+                <bodyTmpl>RunAsRoot_ProductPriorities/grid/cells/priority</bodyTmpl>
+                <label translate="true">Priority</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

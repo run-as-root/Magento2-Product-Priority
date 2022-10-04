@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="RunAsRoot\ProductPriorities\Model\ProductPriority">
+        <arguments>
+            <argument name="resource" xsi:type="object">
+                RunAsRoot\ProductPriorities\Model\ResourceModel\ProductPriority
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="RunAsRoot\ProductPriorities\Api\Data\ProductPriorityInterface"
+                type="RunAsRoot\ProductPriorities\Model\ProductPriority"/>
+    <preference for="RunAsRoot\ProductPriorities\Api\ProductPriorityRepositoryInterface"
+                type="RunAsRoot\ProductPriorities\Model\ProductPriorityRepository"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="product_priorities_listing_data_source" xsi:type="string">
+                    RunAsRoot\ProductPriorities\Model\ResourceModel\ProductPriority\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="RunAsRoot\ProductPriorities\Model\ResourceModel\ProductPriority\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">run_as_root_product_priorities</argument>
+            <argument name="resourceModel" xsi:type="string">RunAsRoot\ProductPriorities\Model\ResourceModel\ProductPriority
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

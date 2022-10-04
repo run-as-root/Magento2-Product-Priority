@@ -1,0 +1,15 @@
+{
+    "run_as_root_product_priorities": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "cell_color": true,
+            "proportion_value": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "RUN_AS_ROOT_PRODUCT_PRIORITIES_NAME": true,
+            "RUN_AS_ROOT_PRODUCT_PRIORITIES_PROPORTION_VALUE": true
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="run_as_root_product_priorities" resource="default" engine="innodb"
+           comment="run_as_root Product Priorities">
+        <column name="entity_id" xsi:type="int" unsigned="true" nullable="false" identity="true"
+                comment="Entity Id"/>
+        <column name="name" xsi:type="varchar" length="255" nullable="false"
+                comment="Priority Name"/>
+        <column name="cell_color" xsi:type="varchar" length="255" nullable="false"
+                comment="Cell Background Color"/>
+        <column name="proportion_value" xsi:type="int" nullable="false"
+                comment="Proportion Value"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+
+        <constraint xsi:type="unique" referenceId="PRIORITY_NAME">
+            <column name="name"/>
+        </constraint>
+
+        <constraint xsi:type="unique" referenceId="PRIORITY_PROPORTION_VALUE">
+            <column name="proportion_value"/>
+        </constraint>
+    </table>
+</schema>

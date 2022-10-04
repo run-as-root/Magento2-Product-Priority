@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">product_priority_form.product_priority_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save"
+                    class="RunAsRoot\ProductPriorities\Block\Adminhtml\ProductPriority\Buttons\SaveButton"/>
+            <button name="delete"
+                    class="RunAsRoot\ProductPriorities\Block\Adminhtml\ProductPriority\Buttons\DeleteButton"/>
+            <button name="back"
+                    class="RunAsRoot\ProductPriorities\Block\Adminhtml\ProductPriority\Buttons\BackButton"/>
+        </buttons>
+        <namespace>product_priority_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>product_priority_form.product_priority_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="product_priority_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="run_as_root/product/priority_save"/>
+        </settings>
+        <dataProvider class="RunAsRoot\ProductPriorities\Model\ProductPriority\DataProvider"
+                      name="product_priority_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="entity_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_priority</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>entity_id</dataScope>
+            </settings>
+        </field>
+        <field name="name" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_priority</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+
+        <field name="proportion_value" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_priority</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Proportion Value</label>
+                <notice>% of proportion greater than</notice>
+                <dataScope>proportion_value</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options>
+                            <option name="0" xsi:type="array">
+                                <item name="value" xsi:type="string">0</item>
+                                <item name="label" xsi:type="string">0</item>
+                            </option>
+                            <option name="5" xsi:type="array">
+                                <item name="value" xsi:type="string">5</item>
+                                <item name="label" xsi:type="string">5</item>
+                            </option>
+                            <option name="10" xsi:type="array">
+                                <item name="value" xsi:type="string">10</item>
+                                <item name="label" xsi:type="string">10</item>
+                            </option>
+                            <option name="15" xsi:type="array">
+                                <item name="value" xsi:type="string">15</item>
+                                <item name="label" xsi:type="string">15</item>
+                            </option>
+                            <option name="20" xsi:type="array">
+                                <item name="value" xsi:type="string">20</item>
+                                <item name="label" xsi:type="string">20</item>
+                            </option>
+                            <option name="25" xsi:type="array">
+                                <item name="value" xsi:type="string">25</item>
+                                <item name="label" xsi:type="string">25</item>
+                            </option>
+                            <option name="30" xsi:type="array">
+                                <item name="value" xsi:type="string">30</item>
+                                <item name="label" xsi:type="string">30</item>
+                            </option>
+                            <option name="35" xsi:type="array">
+                                <item name="value" xsi:type="string">35</item>
+                                <item name="label" xsi:type="string">35</item>
+                            </option>
+                            <option name="40" xsi:type="array">
+                                <item name="value" xsi:type="string">40</item>
+                                <item name="label" xsi:type="string">40</item>
+                            </option>
+                            <option name="45" xsi:type="array">
+                                <item name="value" xsi:type="string">45</item>
+                                <item name="label" xsi:type="string">45</item>
+                            </option>
+                            <option name="50" xsi:type="array">
+                                <item name="value" xsi:type="string">50</item>
+                                <item name="label" xsi:type="string">50</item>
+                            </option>
+                            <option name="55" xsi:type="array">
+                                <item name="value" xsi:type="string">55</item>
+                                <item name="label" xsi:type="string">55</item>
+                            </option>
+                            <option name="60" xsi:type="array">
+                                <item name="value" xsi:type="string">60</item>
+                                <item name="label" xsi:type="string">60</item>
+                            </option>
+                            <option name="65" xsi:type="array">
+                                <item name="value" xsi:type="string">65</item>
+                                <item name="label" xsi:type="string">65</item>
+                            </option>
+                            <option name="70" xsi:type="array">
+                                <item name="value" xsi:type="string">70</item>
+                                <item name="label" xsi:type="string">70</item>
+                            </option>
+                            <option name="75" xsi:type="array">
+                                <item name="value" xsi:type="string">75</item>
+                                <item name="label" xsi:type="string">75</item>
+                            </option>
+                            <option name="80" xsi:type="array">
+                                <item name="value" xsi:type="string">80</item>
+                                <item name="label" xsi:type="string">80</item>
+                            </option>
+                            <option name="85" xsi:type="array">
+                                <item name="value" xsi:type="string">85</item>
+                                <item name="label" xsi:type="string">85</item>
+                            </option>
+                            <option name="90" xsi:type="array">
+                                <item name="value" xsi:type="string">90</item>
+                                <item name="label" xsi:type="string">90</item>
+                            </option>
+                            <option name="95" xsi:type="array">
+                                <item name="value" xsi:type="string">95</item>
+                                <item name="label" xsi:type="string">95</item>
+                            </option>
+                        </options>
+                        <caption translate="true">-- Please Select --</caption>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+
+        <colorPicker name="cell_color" class="Magento\Ui\Component\Form\Element\ColorPicker"
+                     component="Magento_Ui/js/form/element/color-picker">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_priority</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Cell Background Color</label>
+                <elementTmpl>ui/form/element/color-picker</elementTmpl>
+                <colorFormat>rgb</colorFormat>
+                <colorPickerMode>full</colorPickerMode>
+                <dataScope>cell_color</dataScope>
+                <notice>Choose the color for cell background property</notice>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </colorPicker>
+    </fieldset>
+</form>

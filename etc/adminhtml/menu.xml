@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="RunAsRoot_ProductPriorities::run_as_root"
+             title="run_as_root"
+             module="RunAsRoot_ProductPriorities"
+             sortOrder="120"
+             parent="Magento_Backend::marketing"
+             resource="RunAsRoot_ProductPriorities::run_as_root"/>
+        <add id="RunAsRoot_ProductPriorities::product_priorities"
+             title="Product Priorities"
+             module="RunAsRoot_ProductPriorities"
+             sortOrder="130"
+             action="run_as_root/product/priorities"
+             resource="RunAsRoot_ProductPriorities::product_priorities"
+             parent="RunAsRoot_ProductPriorities::run_as_root"/>
+    </menu>
+</config>
+
