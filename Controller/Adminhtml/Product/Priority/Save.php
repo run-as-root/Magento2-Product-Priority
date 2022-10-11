@@ -48,7 +48,7 @@ class Save extends AbstractPriority implements HttpPostActionInterface
             /** @var ProductPriority $model */
             $model = $this->productPriorityFactory->create();
 
-            $id = $this->getRequest()->getParam('entity_id');
+            $id = (int)$this->getRequest()->getParam('entity_id');
             if ($id) {
                 try {
                     $model = $this->productPriorityRepository->get($id);

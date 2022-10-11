@@ -16,7 +16,7 @@ class Delete extends AbstractPriority implements HttpPostActionInterface
     {
         /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
-        $id = $this->getRequest()->getParam('entity_id');
+        $id = (int)$this->getRequest()->getParam('entity_id');
         if ($id) {
             try {
                 $this->productPriorityRepository->deleteById($id);

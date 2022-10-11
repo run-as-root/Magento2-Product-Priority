@@ -17,6 +17,11 @@ class ProductPriority
         return [self::CACHE_TAG . '_' . $this->getEntityId()];
     }
 
+    public function getEntityId(): ?int
+    {
+        return (int)$this->getData(self::KEY_ENTITY_ID);
+    }
+
     public function getName()
     {
         return $this->getData(self::KEY_NAME);

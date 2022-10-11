@@ -24,7 +24,7 @@ class GenericButton
 
     public function getEntityId(): ?int
     {
-        $entityId = $this->context->getRequest()->getParam('entity_id');
+        $entityId = (int)$this->context->getRequest()->getParam('entity_id');
         if (!$entityId) {
             return null;
         }

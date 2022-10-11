@@ -45,8 +45,8 @@ class ProductPriorityRepository implements ProductPriorityRepositoryInterface
                 $e
             );
         }
-        unset($this->instances[$productPriority->getId()]);
-        return $this->get($productPriority->getId());
+        unset($this->instances[$productPriority->getEntityId()]);
+        return $productPriority;
     }
 
     public function get(int $entityId): ProductPriorityInterface
@@ -56,7 +56,7 @@ class ProductPriorityRepository implements ProductPriorityRepositoryInterface
             $productPriority = $this->productPriorityFactory->create();
             $this->resource->load($productPriority, $entityId);
 
-            if (!$productPriority->getId()) {
+            if (!$productPriority->getEntityId()) {
                 throw NoSuchEntityException::singleField('entity_id', $entityId);
             }
             $this->instances[$entityId] = $productPriority;
@@ -82,6 +82,10 @@ class ProductPriorityRepository implements ProductPriorityRepositoryInterface
         return true;
     }
 
+    /**
+     * @throws CouldNotDeleteException
+     * @throws NoSuchEntityException
+     */
     public function deleteById(int $entityId): bool
     {
         $productPriority = $this->get($entityId);
