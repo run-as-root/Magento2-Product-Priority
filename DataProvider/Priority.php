@@ -54,7 +54,7 @@ class Priority
         /** @var ReportItem $bestSeller */
         foreach ($bestSellers->getItems() as $bestSeller) {
             $result[$bestSeller->getData('product_id')] = $this->getPriorityByProportion(
-                $bestSeller->getData('qty_ordered') * 100 / $maxQtyOrdered
+                (int)($bestSeller->getData('qty_ordered') * 100 / $maxQtyOrdered)
             );
         }
 
